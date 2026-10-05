@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Azienda Agricola Il Giglio Firenze | Tenuta di Marignolle - Olio EVO & Aceto Artigianale</title>
+    
+    <!-- Meta per Smartphone & iOS WebApp -->
+    <meta name="theme-color" content="#0D2716">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        florence: {
+                            gold: '#C59B3F',
+                            goldLight: '#E5C97A',
+                            goldDark: '#8F6B20',
+                            goldPale: '#F8F1DD',
+                            green: '#0D2716',
+                            greenDark: '#08170D',
+                            greenOlive: '#294326',
+                            greenLeaf: '#4C6938',
+                            wine: '#6B1624',
+                            parchment: '#FBF7EE',
+                            parchmentDark: '#F3EAD5',
+                            borderGold: '#D4AF37'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        cinzel: ['"Cinzel"', 'serif'],
+                        body: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        cormorant: ['"Cormorant Garamond"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F8F3E6;
+            color: #1A2215;
+            background-image: radial-gradient(#d8ccb0 0.75px, transparent 0.75px);
+            background-size: 14px 14px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .label-frame {
+            border: 4px solid #0D2716;
+            box-shadow: 
+                inset 0 0 0 2px #FBF7EE,
+                inset 0 0 0 4px #C59B3F,
+                inset 0 0 0 6px #FBF7EE,
+                0 15px 35px -10px rgba(13, 39, 22, 0.25);
+            border-radius: 20px;
+        }
+
+        .paper-bg {
+            background-color: #FAF4E5;
+            background-image: 
+                radial-gradient(ellipse at top, rgba(255,255,255,0.7), transparent 70%),
+                radial-gradient(ellipse at bottom, rgba(212,175,55,0.08), transparent 75%);
+        }
+
+        .gold-divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #C59B3F;
+        }
+        .gold-divider::before,
+        .gold-divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #C59B3F;
+        }
+        .gold-divider:not(:empty)::before {
+            margin-right: 1.2em;
+        }
+        .gold-divider:not(:empty)::after {
+            margin-left: 1.2em;
+        }
+
+        .glass-nav {
+            background: rgba(250, 244, 229, 0.98);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            border-bottom: 2px solid #C59B3F;
+        }
+
+        /* Nascondi scrollbar orizzontale su smartphone mantenendo lo scorrimento fluido */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="selection:bg-florence-gold selection:text-florence-green overflow-x-hidden w-full relative">
+
+    <!-- SVG Defs condivisi per la resa ottimale di tutte le medaglie delle coccarde -->
+    <svg class="hidden" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="podioGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#E9D18D" />
+                <stop offset="50%" stop-color="#C59B3F" />
+                <stop offset="100%" stop-color="#8F6B20" />
+            </linearGradient>
+            <linearGradient id="podioGreenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#143620" />
+                <stop offset="100%" stop-color="#08170D" />
+            </linearGradient>
+            <path id="podioTextPathTop" d="M 50,150 A 100,100 0 1,1 250,150" fill="none" />
+            <path id="podioTextPathBottom" d="M 250,150 A 100,100 0 0,1 50,150" fill="none" />
+            <path id="podioRibbonArc" d="M 65,270 Q 150,295 235,270" fill="none" />
+
+            <!-- Modello base coccarda condiviso per massima nitidezza e leggerezza -->
+            <g id="medalRosetteBase">
+                <!-- Tails -->
+                <g fill="#0D2716" stroke="#C59B3F" stroke-width="2.5">
+                    <path d="M 85,200 L 50,340 L 95,355 L 125,240 Z" />
+                    <path d="M 68,220 L 45,340 L 70,348 L 92,235 Z" fill="url(#podioGoldGrad)" />
+                    <path d="M 98,220 L 78,350 L 88,353 L 108,235 Z" fill="#0D2716" />
+                    <path d="M 215,200 L 250,340 L 205,355 L 175,240 Z" />
+                    <path d="M 232,220 L 255,340 L 230,348 L 208,235 Z" fill="url(#podioGoldGrad)" />
+                    <path d="M 202,220 L 222,350 L 212,353 L 192,235 Z" fill="#0D2716" />
+                </g>
+                <!-- Outer Rosette Petals -->
+                <g transform="translate(150,150)" fill="#0D2716" stroke="#C59B3F" stroke-width="2">
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(15)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(30)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(45)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(60)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(75)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(90)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(105)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(120)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(135)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(150)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(165)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(180)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(195)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(210)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(225)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(240)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(255)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(270)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(285)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(300)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(315)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(330)" />
+                    <path d="M 0,-146 L 14,-125 L -14,-125 Z" transform="rotate(345)" />
+                </g>
+                <!-- Concentric Circles -->
+                <circle cx="150" cy="150" r="118" fill="url(#podioGreenGrad)" stroke="#C59B3F" stroke-width="3.5" />
+                <circle cx="150" cy="150" r="82" fill="#FAF4E5" stroke="#C59B3F" stroke-width="3" />
+                <!-- Circular Text -->
+                <text font-family="'Cinzel', serif" font-size="11" font-weight="800" fill="#E9D18D" letter-spacing="1.2">
+                    <textPath href="#podioTextPathTop" startOffset="50%" text-anchor="middle">CONCORSO FRANTOIO IL MANDORLO</textPath>
+                </text>
+                <text font-family="'Cinzel', serif" font-size="11" font-weight="800" fill="#E9D18D" letter-spacing="1">
+                    <textPath href="#podioTextPathBottom" startOffset="50%" text-anchor="middle">IN MEMORIA DI LINO LONARI</textPath>
+                </text>
+                <text x="44" y="153" font-size="11" fill="#C59B3F">★</text>
+                <text x="246" y="153" font-size="11" fill="#C59B3F">★</text>
+                <!-- Laurel Branches -->
+                <g fill="#C59B3F" stroke="#8F6B20" stroke-width="0.8">
+                    <ellipse cx="106" cy="130" rx="9" ry="4" transform="rotate(-40 106 130)" />
+                    <ellipse cx="102" cy="150" rx="9" ry="4" transform="rotate(-20 102 150)" />
+                    <ellipse cx="106" cy="170" rx="9" ry="4" transform="rotate(5 106 170)" />
+                    <ellipse cx="116" cy="188" rx="9" ry="4" transform="rotate(30 116 188)" />
+                    <ellipse cx="132" cy="202" rx="9" ry="4" transform="rotate(55 132 202)" />
+                    <ellipse cx="194" cy="130" rx="9" ry="4" transform="rotate(40 194 130)" />
+                    <ellipse cx="198" cy="150" rx="9" ry="4" transform="rotate(20 198 150)" />
+                    <ellipse cx="194" cy="170" rx="9" ry="4" transform="rotate(-5 194 170)" />
+                    <ellipse cx="184" cy="188" rx="9" ry="4" transform="rotate(-30 184 188)" />
+                    <ellipse cx="168" cy="202" rx="9" ry="4" transform="rotate(-55 168 202)" />
+                </g>
+                <!-- Ribbon "SUL PODIO" -->
+                <path d="M 55,260 Q 150,285 245,260 L 241,295 Q 150,320 59,295 Z" fill="url(#podioGoldGrad)" stroke="#8F6B20" stroke-width="2.2" />
+                <text font-family="'Cinzel', serif" font-size="16" font-weight="900" fill="#0D2716" letter-spacing="1.5">
+                    <textPath href="#podioRibbonArc" startOffset="50%" text-anchor="middle">SUL PODIO</textPath>
+                </text>
+                <!-- Olives Bottom -->
+                <g transform="translate(150, 332)">
+                    <path d="M -30,-4 Q 0,6 30,-4" stroke="#8F6B20" stroke-width="1.8" fill="none" />
+                    <ellipse cx="-5" cy="2" rx="5" ry="7" fill="#143620" stroke="#C59B3F" stroke-width="1.2" transform="rotate(-10 -5 2)" />
+                    <ellipse cx="5" cy="2" rx="5" ry="7" fill="#143620" stroke="#C59B3F" stroke-width="1.2" transform="rotate(10 5 2)" />
+                </g>
+            </g>
+
+            <!-- RAMETTO D'OLIVO BOTANICO NATURALE E DELICATO -->
+            <g id="botanicalOliveBranch">
+                <!-- Rametto legnoso affusolato e naturale -->
+                <path d="M 195,10 C 175,65 155,115 130,170 C 105,220 70,255 20,285" fill="none" stroke="#594429" stroke-width="2.2" stroke-linecap="round" />
+                <path d="M 165,90 C 140,105 110,122 80,140" fill="none" stroke="#685133" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M 130,170 C 115,200 90,225 60,250" fill="none" stroke="#685133" stroke-width="1.4" stroke-linecap="round" />
+                <path d="M 100,220 C 120,240 132,265 125,290" fill="none" stroke="#594429" stroke-width="1.3" stroke-linecap="round" />
+
+                <!-- Peduncoli fini delle olive -->
+                <path d="M 152,108 Q 140,125 136,138" fill="none" stroke="#685133" stroke-width="1.1" />
+                <path d="M 125,182 Q 138,198 145,212" fill="none" stroke="#685133" stroke-width="1.1" />
+                <path d="M 85,230 Q 75,248 70,262" fill="none" stroke="#685133" stroke-width="1" />
+                <path d="M 112,250 Q 118,268 116,280" fill="none" stroke="#685133" stroke-width="1" />
+
+                <!-- Foglie d'olivo sottili e naturali -->
+                <path d="M 195,15 C 175,12 155,25 142,42 C 160,38 182,30 195,15 Z" fill="#475C34" />
+                <path d="M 195,15 Q 166,28 142,42" stroke="#77915B" stroke-width="0.8" fill="none" />
+
+                <path d="M 190,25 C 205,45 208,68 202,88 C 194,68 188,48 190,25 Z" fill="#5A7342" />
+                <path d="M 190,25 Q 200,56 202,88" stroke="#8CA670" stroke-width="0.8" fill="none" />
+
+                <path d="M 175,60 C 145,55 120,70 102,90 C 125,85 155,75 175,60 Z" fill="#475C34" />
+                <path d="M 175,60 Q 136,73 102,90" stroke="#77915B" stroke-width="0.8" fill="none" />
+
+                <path d="M 160,80 C 170,105 172,130 162,150 C 158,125 152,102 160,80 Z" fill="#3D502C" />
+                <path d="M 160,80 Q 165,115 162,150" stroke="#6F8852" stroke-width="0.8" fill="none" />
+
+                <path d="M 130,105 C 105,98 80,110 65,126 C 85,122 110,115 130,105 Z" fill="#556E3F" />
+                <path d="M 130,105 Q 96,114 65,126" stroke="#87A16E" stroke-width="0.8" fill="none" />
+
+                <path d="M 95,130 C 70,125 48,138 35,155 C 55,150 78,142 95,130 Z" fill="#445731" />
+                <path d="M 95,130 Q 64,142 35,155" stroke="#748E59" stroke-width="0.8" fill="none" />
+
+                <path d="M 80,140 C 90,165 92,190 85,210 C 80,185 76,162 80,140 Z" fill="#587140" />
+                <path d="M 80,140 Q 86,175 85,210" stroke="#8BA470" stroke-width="0.8" fill="none" />
+
+                <path d="M 140,150 C 158,172 162,198 155,220 C 145,195 138,172 140,150 Z" fill="#445731" />
+                <path d="M 140,150 Q 152,185 155,220" stroke="#748E59" stroke-width="0.8" fill="none" />
+
+                <path d="M 125,185 C 98,180 72,195 55,215 C 78,210 105,200 125,185 Z" fill="#556E3F" />
+                <path d="M 125,185 Q 89,198 55,215" stroke="#87A16E" stroke-width="0.8" fill="none" />
+
+                <path d="M 85,215 C 60,212 36,225 22,245 C 42,240 68,230 85,215 Z" fill="#3D502C" />
+                <path d="M 85,215 Q 52,228 22,245" stroke="#6F8852" stroke-width="0.8" fill="none" />
+
+                <path d="M 60,250 C 35,250 15,265 5,285 C 25,280 48,268 60,250 Z" fill="#475C34" />
+                <path d="M 60,250 Q 32,265 5,285" stroke="#77915B" stroke-width="0.8" fill="none" />
+
+                <path d="M 110,240 C 130,258 138,280 135,300 C 124,280 115,260 110,240 Z" fill="#5A7342" />
+                <path d="M 110,240 Q 125,270 135,300" stroke="#8CA670" stroke-width="0.8" fill="none" />
+
+                <!-- Piccole olive con riflessi sottili -->
+                <g>
+                    <ellipse cx="136" cy="142" rx="9" ry="13" fill="url(#oliveGreenGrad)" transform="rotate(-15 136 142)" />
+                    <ellipse cx="133" cy="138" rx="2.2" ry="4.5" fill="#D3EAA2" opacity="0.65" transform="rotate(-20 133 138)" />
+                </g>
+                <g>
+                    <ellipse cx="147" cy="216" rx="9.5" ry="13.5" fill="url(#oliveBlackGrad)" transform="rotate(18 147 216)" />
+                    <ellipse cx="143" cy="211" rx="2.5" ry="4.8" fill="#C9A8D4" opacity="0.55" transform="rotate(12 143 211)" />
+                </g>
+                <g>
+                    <ellipse cx="68" cy="266" rx="8.5" ry="12.5" fill="url(#oliveGreenGrad)" transform="rotate(-22 68 266)" />
+                    <ellipse cx="65" cy="262" rx="2" ry="4.2" fill="#D3EAA2" opacity="0.6" transform="rotate(-28 65 262)" />
+                </g>
+                <g>
+                    <ellipse cx="116" cy="284" rx="8" ry="12" fill="url(#oliveBlackGrad)" transform="rotate(8 116 284)" />
+                    <ellipse cx="113" cy="279" rx="2.2" ry="4.2" fill="#C9A8D4" opacity="0.55" transform="rotate(4 113 279)" />
+                </g>
+            </g>
+
+            <!-- Gradienti sfumati per le olive -->
+            <linearGradient id="oliveGreenGrad" x1="20%" y1="10%" x2="90%" y2="90%">
+                <stop offset="0%" stop-color="#9BB44A" />
+                <stop offset="60%" stop-color="#678028" />
+                <stop offset="100%" stop-color="#344614" />
+            </linearGradient>
+
+            <linearGradient id="oliveBlackGrad" x1="20%" y1="10%" x2="90%" y2="90%">
+                <stop offset="0%" stop-color="#4C344A" />
+                <stop offset="50%" stop-color="#241426" />
+                <stop offset="100%" stop-color="#0E050F" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <!-- Navigation Header (Ottimizzato per Smartphone con scorrimento touch privo di tagli) -->
+    <nav class="sticky top-0 z-50 glass-nav shadow-md">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20 lg:h-24">
+                
+                <!-- Gruppo Logo + 6 Medaglie Piccole in una riga (con supporto scorrimento touch se lo schermo è molto stretto) -->
+                <div class="flex items-center gap-2 sm:gap-3 lg:gap-4 overflow-x-auto no-scrollbar max-w-[calc(100%-48px)] xl:max-w-none py-1">
+                    
+                    <!-- Main Logo with Florentine Giglio -->
+                    <a href="#home" class="flex items-center gap-1.5 sm:gap-2.5 group shrink-0">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-florence-green border-2 border-florence-gold flex items-center justify-center p-1 sm:p-1.5 shadow-md group-hover:scale-105 transition-transform shrink-0">
+                            <svg viewBox="0 0 100 120" class="w-full h-full text-florence-gold fill-current drop-shadow">
+                                <path d="M50 8 C48 18 43 28 35 34 C43 38 47 48 47 62 C45 62 43 61 41 60 C38 52 32 46 22 45 C18 45 13 47 10 51 C6 56 6 63 10 68 C16 75 26 77 34 74 C38 72 41 68 44 64 C43 78 40 91 30 102 C37 100 44 98 50 93 C56 98 63 100 70 102 C60 91 57 78 56 64 C59 68 62 72 66 74 C74 77 84 75 90 68 C94 63 94 56 90 51 C87 47 82 45 78 45 C68 46 62 52 59 60 C57 61 55 62 53 62 C53 48 57 38 65 34 C57 28 52 18 50 8 Z" />
+                                <path d="M43 67 L57 67 L55 72 L45 72 Z" fill="#E5C97A" />
+                                <circle cx="50" cy="110" r="4" fill="#C59B3F" />
+                            </svg>
+                        </div>
+                        <div class="flex items-center gap-1 sm:gap-2 whitespace-nowrap leading-none">
+                            <span class="hidden md:inline text-[9px] sm:text-[11px] uppercase tracking-[0.2em] text-florence-greenOlive font-bold">Azienda Agricola</span>
+                            <span class="font-cinzel text-sm sm:text-lg lg:text-xl font-extrabold tracking-wider text-florence-green">IL GIGLIO</span>
+                            <span class="text-florence-gold/60 font-serif text-xs sm:text-sm">―</span>
+                            <span class="text-[8px] sm:text-[10px] lg:text-[11px] font-extrabold uppercase tracking-[0.14em] sm:tracking-[0.18em] text-florence-goldDark">FIRENZE</span>
+                            <span class="text-[6px] text-florence-gold">●</span>
+                            <span class="text-[8px] sm:text-[10px] lg:text-[11px] font-extrabold uppercase tracking-[0.14em] sm:tracking-[0.18em] text-florence-goldDark">MARIGNOLLE</span>
+                        </div>
+                    </a>
+
+                    <!-- Divisorio verticale sottile -->
+                    <div class="h-6 sm:h-8 w-px bg-florence-gold/40 shrink-0"></div>
+
+                    <!-- LE 6 MEDAGLIE PICCOLE TUTTE IN UNA RIGA ACCANTO AL MARCHIO -->
+                    <div class="flex items-center gap-0.5 sm:gap-1.5 shrink-0" title="6 Anni Sul Podio Consecutivi (Concorso Frantoio Il Mandorlo)">
+                        <div class="w-6 sm:w-8 md:w-9 h-8 sm:h-10 md:h-11 hover:scale-110 transition-transform cursor-pointer shrink-0" title="Sul Podio 2021">
+                            <svg viewBox="0 0 300 370" class="w-full h-full drop-shadow-sm select-none">
+                                <use href="#medalRosetteBase" />
+                                <text x="150" y="158" font-family="'Cinzel', serif" font-size="28" font-weight="900" fill="#0D2716" text-anchor="middle">2021</text>
+                            </svg>
+                        </div>
+                        <div class="w-6 sm:w-8 md:w-9 h-8 sm:h-10 md:h-11 hover:scale-110 transition-transform cursor-pointer shrink-0" title="Sul Podio 2022">
+                            <svg viewBox="0 0 300 370" class="w-full h-full drop-shadow-sm select-none">
+                                <use href="#medalRosetteBase" />
+                                <text x="150" y="158" font-family="'Cinzel', serif" font-size="28" font-weight="900" fill="#0D2716" text-anchor="middle">2022</text>
+                            </svg>
+                        </div>
+                        <div class="w-6 sm:w-8 md:w-9 h-8 sm:h-10 md:h-11 hover:scale-110 transition-transform cursor-pointer shrink-0" title="Sul Podio 2023">
+                            <svg viewBox="0 0 300 370" class="w-full h-full drop-shadow-sm select-none">
+                                <use href="#medalRosetteBase" />
+                                <text x="150" y="158" font-family="'Cinzel', serif" font-size="28" font-weight="900" fill="#0D2716" text-anchor="middle">2023</text>
+                            </svg>
+                        </div>
+                        <div class="w-6 sm:w-8 md:w-9 h-8 sm:h-10 md:h-11 hover:scale-110 transition-transform cursor-pointer shrink-0" title="Sul Podio 2024">
+                            <svg viewBox="0 0 300 370" class="w-full h-full drop-shadow-sm select-none">
+                                <use href="#medalRosetteBase" />
+                                <text x="150" y="158" font-family="'Cinzel', serif" font-size="28" font-weight="900" fill="#0D2716" text-anchor="middle">2024</text>
+                            </svg>
+                        </div>
+                        <div class="w-6 sm:w-8 md:w-9 h-8 sm:h-10 md:h-11 hover:scale-110 transition-transform cursor-pointer shrink-0" title="Sul Podio 2025">
+                            <svg viewBox="0 0 300 370" class="w-full h-full drop-shadow-sm select-none">
+                                <use href="#medalRosetteBase" />
+                                <text x="150" y="158" font-family="'Cinzel', serif" font-size="28" font-weight="900" fill="#0D2716" text-anchor="middle">2025</text>
+                            </svg>
+                        </div>
+                        <div class="w-6 sm:w-8 md:w-9 h-8 sm:h-10 md:h-11 hover:scale-110 transition-transform cursor-pointer shrink-0" title="Sul Podio 2026">
+                            <svg viewBox="0 0 300 370" class="w-full h-full drop-shadow-sm select-none">
+                                <use href="#medalRosetteBase" />
+                                <text x="150" y="158" font-family="'Cinzel', serif" font-size="28" font-weight="900" fill="#0D2716" text-anchor="middle">2026</text>
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden xl:flex items-center space-x-5 text-xs font-bold tracking-[0.14em] uppercase text-florence-green">
+                    <a href="#lorenzo-gori" class="hover:text-florence-goldDark transition-colors">Lorenzo Gori</a>
+                    <a href="#filosofia" class="hover:text-florence-goldDark transition-colors">La Tenuta</a>
+                    <a href="#storia-marignolle" class="hover:text-florence-goldDark transition-colors">Storia di Marignolle</a>
+                    <a href="#frantoio" class="hover:text-florence-goldDark transition-colors">Il Mandorlo</a>
+                    <a href="#oliveta" class="hover:text-florence-goldDark transition-colors">Le 4 Cultivar</a>
+                    <a href="#qualita-valori" class="hover:text-florence-goldDark transition-colors">Valori Nutrizionali</a>
+                    <a href="#aceto" class="hover:text-florence-goldDark transition-colors">L'Aceto</a>
+                    <a href="#abbinamenti" class="hover:text-florence-goldDark transition-colors">In Tavola</a>
+                    <a href="#contatti" class="px-3.5 py-1.5 rounded-full bg-florence-green text-florence-gold border border-florence-gold hover:bg-florence-gold hover:text-florence-green transition-all shadow-sm">Contatti</a>
+                </div>
+
+                <!-- Hamburger Button per Smartphone (Target touch ampio 44x44px per dita) -->
+                <button id="mobileMenuBtn" aria-label="Apri Menu di Navigazione" class="xl:hidden w-11 h-11 flex items-center justify-center text-florence-green text-2xl active:scale-95 transition-transform rounded-lg">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Design elegante a tutta larghezza con voci spaziate e facili da premere su touch) -->
+        <div id="mobileMenu" class="hidden xl:hidden bg-florence-parchmentDark border-t border-florence-gold/40 px-5 py-4 space-y-2 text-xs font-bold uppercase tracking-widest text-florence-green shadow-xl max-h-[80vh] overflow-y-auto">
+            <a href="#lorenzo-gori" class="block py-2.5 px-3 rounded-lg hover:bg-florence-gold/15 active:bg-florence-gold/25 mobile-link">Lorenzo Gori (Arte dell'Olio)</a>
+            <a href="#filosofia" class="block py-2.5 px-3 rounded-lg hover:bg-florence-gold/15 active:bg-florence-gold/25 mobile-link">La Tenuta di Marignolle</a>
+            <a href="#storia-marignolle" class="block py-2.5 px-3 rounded-lg hover:bg-florence-gold/15 active:bg-florence-gold/25 mobile-link">Storia di Marignolle</a>
+            <a href="#frantoio" class="block py-2.5 px-3 rounded-lg hover:bg-florence-gold/15 active:bg-florence-gold/25 mobile-link">Frantoio Il Mandorlo</a>
+            <a href="#oliveta" class="block py-2.5 px-3 rounded-lg hover:bg-florence-gold/15 active:bg-florence-gold/25 mobile-link">Le 4 Cultivar</a>
+            <a href="#qualita-valori" class="block py-2.5 px-3 rounded-lg hover:bg-florence-gold/15 active:bg-florence-gold/25 mobile-link">Dichiarazione Nutrizionale</a>
+            <a href="#aceto" class="block py-2.5 px-3 rounded-lg hover:bg-florence-gold/15 active:bg-florence-gold/25 mobile-link">L'Aceto di Tenuta</a>
+            <a href="#abbinamenti" class="block py-2.5 px-3 rounded-lg hover:bg-florence-gold/15 active:bg-florence-gold/25 mobile-link">In Tavola</a>
+            <a href="#contatti" class="block py-3 px-4 rounded-xl bg-florence-green text-florence-gold border border-florence-gold text-center font-extrabold mobile-link shadow-md mt-2">
+                <i class="fa-solid fa-phone mr-1.5"></i> Contatti & Prenotazioni
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION CON FOTO ULIVE E COLLINE -->
+    <header id="home" class="relative overflow-hidden py-12 sm:py-16 lg:py-24 border-b-4 border-florence-gold">
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d0fbb186f5f7?auto=format&fit=crop&w=2000&q=80'); filter: sepia(0.12) saturate(1.15) brightness(0.55);"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-florence-greenDark/95 via-florence-green/85 to-florence-greenDark/95"></div>
+        </div>
+
+        <!-- Ramo d'olivo botanico naturale in basso a destra -->
+        <div class="absolute right-0 bottom-0 z-10 w-20 sm:w-32 md:w-44 pointer-events-none select-none opacity-40 sm:opacity-60">
+            <svg viewBox="0 0 220 300" class="w-full h-auto drop-shadow-md">
+                <use href="#botanicalOliveBranch" />
+            </svg>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="space-y-4 sm:space-y-6 text-white">
+                <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-florence-greenDark/90 border border-florence-gold text-florence-goldLight text-[10px] sm:text-xs tracking-[0.18em] sm:tracking-[0.25em] uppercase font-cinzel font-bold shadow-md mx-auto">
+                    <i class="fa-solid fa-crown text-florence-gold text-[10px] sm:text-xs"></i>
+                    <span>Olio d'Eccellenza dal 1986 • Tenuta di Marignolle</span>
+                </div>
+
+                <h1 class="font-cinzel text-2xl sm:text-5xl lg:text-6xl font-extrabold tracking-wide text-white leading-tight sm:leading-tight">
+                    L'OLIO DELLA NOSTRA TERRA.
+                </h1>
+                
+                <p class="font-cormorant italic text-lg sm:text-2xl lg:text-3xl text-florence-goldLight leading-relaxed max-w-3xl mx-auto px-2">
+                    "Questo olio extravergine di oliva proviene interamente dalle nostre olive coltivate nella Tenuta di Marignolle, sulle colline di Firenze."
+                </p>
+
+                <p class="text-xs sm:text-sm text-gray-200 leading-relaxed max-w-2xl mx-auto font-body px-2">
+                    Dal 1986, <strong>Lorenzo Gori</strong> infonde una dedizione incrollabile in ogni istante della produzione: è presente personalmente in ogni gesto, dalla potatura manuale delle piante alla cura del terreno, dalla scelta dell'istante esatto di raccolta fino alla frangitura e al meticoloso imbottigliamento all'origine.
+                </p>
+
+                <!-- 3 Pilastri Informativi -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-3 sm:pt-4 max-w-3xl mx-auto">
+                    <div class="bg-black/50 border border-florence-gold/40 rounded-xl p-3 sm:p-4 backdrop-blur-sm">
+                        <span class="text-[9px] uppercase tracking-widest text-florence-gold font-bold block">Tradizione</span>
+                        <span class="font-cinzel text-sm sm:text-base font-bold text-white block mt-0.5">Dal 1986</span>
+                        <span class="text-[10px] text-gray-300">Maestria e presenza costante</span>
+                    </div>
+                    <div class="bg-black/50 border border-florence-gold/40 rounded-xl p-3 sm:p-4 backdrop-blur-sm">
+                        <span class="text-[9px] uppercase tracking-widest text-florence-gold font-bold block">Origine & Metodo</span>
+                        <span class="font-cinzel text-sm sm:text-base font-bold text-white block mt-0.5">100% Italiano</span>
+                        <span class="text-[10px] text-gray-300">Spremitura a freddo immediata</span>
+                    </div>
+                    <div class="bg-black/50 border border-florence-gold/40 rounded-xl p-3 sm:p-4 backdrop-blur-sm">
+                        <span class="text-[9px] uppercase tracking-widest text-florence-gold font-bold block">Oliveta di Tenuta</span>
+                        <span class="font-cinzel text-sm sm:text-base font-bold text-white block mt-0.5">4 Cultivar</span>
+                        <span class="text-[10px] text-gray-300">Frantoio, Leccino, Moraiolo, Pendolino</span>
+                    </div>
+                </div>
+
+                <!-- Call to action buttons ottimizzati per tocco smartphone -->
+                <div class="pt-3 sm:pt-4 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 items-stretch sm:items-center max-w-md sm:max-w-none mx-auto">
+                    <a href="#lorenzo-gori" class="w-full sm:w-auto px-6 sm:px-7 py-3 rounded-full bg-florence-gold hover:bg-florence-goldLight active:scale-95 text-florence-green font-cinzel font-bold uppercase tracking-wider text-xs transition shadow-xl text-center">
+                        La Passione di Lorenzo Gori
+                    </a>
+                    <a href="#oliveta" class="w-full sm:w-auto px-6 sm:px-7 py-3 rounded-full border-2 border-florence-gold text-florence-goldLight hover:bg-white/10 active:scale-95 font-cinzel font-semibold uppercase tracking-wider text-xs transition text-center">
+                        Le 4 Cultivar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEZIONE MONOGRAFICA: LORENZO GORI DAL 1986 -->
+    <section id="lorenzo-gori" class="py-12 sm:py-20 bg-florence-parchmentDark border-b-2 border-florence-gold/40 relative overflow-hidden">
+        <!-- Ramo d'olivo discreto e naturale in basso a destra -->
+        <div class="absolute right-0 bottom-0 z-10 w-20 sm:w-32 md:w-44 pointer-events-none select-none opacity-40 sm:opacity-50">
+            <svg viewBox="0 0 220 300" class="w-full h-auto drop-shadow-md">
+                <use href="#botanicalOliveBranch" />
+            </svg>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+                <span class="text-[10px] sm:text-xs font-cinzel tracking-[0.25em] sm:tracking-[0.3em] uppercase text-florence-goldDark font-bold block mb-1">
+                    Maestria & Presenza Costante
+                </span>
+                <h2 class="font-cinzel text-2xl sm:text-4xl font-bold text-florence-green">
+                    Lorenzo Gori e l'Arte dell'Olio
+                </h2>
+                <div class="gold-divider max-w-xs mx-auto my-3 text-xs">◆</div>
+                <p class="font-cormorant italic text-lg sm:text-2xl text-florence-greenOlive leading-relaxed px-2">
+                    "Un impegno quotidiano che dura da decenni: la vera eccellenza nasce quando passione, competenza e presenza diretta si uniscono in ogni fase."
+                </p>
+            </div>
+
+            <!-- Spotlight Card: Presenza in ogni momento -->
+            <div class="paper-bg p-5 sm:p-8 lg:p-12 rounded-2xl sm:rounded-3xl border-2 border-florence-gold shadow-2xl space-y-6 sm:space-y-8 relative overflow-hidden">
+                <div class="absolute top-0 right-0 transform translate-x-12 -translate-y-12 w-64 h-64 bg-florence-gold/10 rounded-full blur-2xl pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+                    <div class="lg:col-span-5 space-y-3 sm:space-y-4">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 rounded-full bg-florence-green text-florence-gold flex items-center justify-center text-xl sm:text-2xl shadow-lg border-2 border-florence-gold">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+                            <h3 class="font-cinzel text-lg sm:text-2xl font-bold text-florence-green leading-snug">
+                                Cura Diretta & Presenza Costante
+                            </h3>
+                        </div>
+                        <p class="text-xs sm:text-sm text-florence-greenOlive leading-relaxed">
+                            Fin dal <strong>1986</strong>, <strong>Lorenzo Gori</strong> produce olio extravergine d'oliva d'eccellenza sulle colline fiorentine di Marignolle senza mai delegare le fasi cruciali del lavoro.
+                        </p>
+                        <p class="text-xs sm:text-sm text-florence-greenOlive leading-relaxed">
+                            Mette il cuore e un'attenzione scrupolosa in <strong>ogni singolo momento del ciclo produttivo</strong>: segue l'oliveta giorno per giorno, partecipa attivamente alla raccolta manuale, supervisiona la molitura al frantoio minuto per minuto e cura personalmente ogni singola bottiglia fino all'imbottigliamento e alla sigillatura.
+                        </p>
+                    </div>
+
+                    <!-- I 4 Pilastri della Partecipazione Diretta (Numeri perfettamente centrati) -->
+                    <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                        
+                        <div class="p-4 sm:p-5 rounded-2xl bg-white/80 border border-florence-borderGold/70 shadow-sm space-y-1.5 sm:space-y-2">
+                            <div class="flex items-center gap-3 text-florence-green">
+                                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-florence-green text-florence-gold inline-flex items-center justify-center font-cinzel font-bold text-xs leading-none text-center">1</span>
+                                <h4 class="font-cinzel text-xs sm:text-sm font-bold">Cura & Potatura</h4>
+                            </div>
+                            <p class="text-[11px] text-florence-greenOlive leading-relaxed">
+                                Controllo costante dello stato vegetativo delle quattro cultivar sui terrazzamenti di Marignolle. Potature mirate per arieggiare la chioma e garantire frutti sani.
+                            </p>
+                        </div>
+
+                        <div class="p-4 sm:p-5 rounded-2xl bg-white/80 border border-florence-borderGold/70 shadow-sm space-y-1.5 sm:space-y-2">
+                            <div class="flex items-center gap-3 text-florence-green">
+                                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-florence-gold text-florence-green inline-flex items-center justify-center font-cinzel font-bold text-xs leading-none text-center">2</span>
+                                <h4 class="font-cinzel text-xs sm:text-sm font-bold">Raccolta Manuale</h4>
+                            </div>
+                            <p class="text-[11px] text-florence-greenOlive leading-relaxed">
+                                Partecipazione diretta alla coglitura manuale: le drupe vengono selezionate sui rami nell'esatto punto d'invaiatura, proteggendone l'integrità.
+                            </p>
+                        </div>
+
+                        <div class="p-4 sm:p-5 rounded-2xl bg-white/80 border border-florence-borderGold/70 shadow-sm space-y-1.5 sm:space-y-2">
+                            <div class="flex items-center gap-3 text-florence-green">
+                                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-florence-green text-florence-gold inline-flex items-center justify-center font-cinzel font-bold text-xs leading-none text-center">3</span>
+                                <h4 class="font-cinzel text-xs sm:text-sm font-bold">Presenza in Frantoio</h4>
+                            </div>
+                            <p class="text-[11px] text-florence-greenOlive leading-relaxed">
+                                Accompagna personalmente le olive al Frantoio Il Mandorlo a poche ore dal distacco. Segue la frangitura e la separazione a freddo senza sosta.
+                            </p>
+                        </div>
+
+                        <div class="p-4 sm:p-5 rounded-2xl bg-white/80 border border-florence-borderGold/70 shadow-sm space-y-1.5 sm:space-y-2">
+                            <div class="flex items-center gap-3 text-florence-green">
+                                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-florence-gold text-florence-green inline-flex items-center justify-center font-cinzel font-bold text-xs leading-none text-center">4</span>
+                                <h4 class="font-cinzel text-xs sm:text-sm font-bold">Imbottigliamento</h4>
+                            </div>
+                            <p class="text-[11px] text-florence-greenOlive leading-relaxed">
+                                Confezionamento a regola d'arte all'origine nella Tenuta: ogni bottiglia viene colmata, tappata ed etichettata sotto il suo sguardo vigile.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="border-t border-florence-borderGold/60 pt-5 sm:pt-6 text-center">
+                    <p class="font-cormorant italic text-sm sm:text-lg text-florence-green leading-relaxed max-w-3xl mx-auto px-2">
+                        "Dal 1986 non abbiamo mai concepito l'olio come un prodotto industriale: per noi è il respiro della terra di Marignolle, un dono vivo che esige rispetto, fatica quotidiana e amore incondizionato."
+                    </p>
+                    <span class="font-cinzel text-[11px] sm:text-xs uppercase tracking-widest text-florence-goldDark font-bold block mt-2">
+                        — Lorenzo Gori
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FILOSOFIA E TERRA -->
+    <section id="filosofia" class="py-12 sm:py-20 bg-florence-parchment relative overflow-hidden">
+        <!-- Ramo d'olivo discreto e naturale in basso a destra -->
+        <div class="absolute right-0 bottom-0 z-10 w-20 sm:w-32 md:w-44 pointer-events-none select-none opacity-40 sm:opacity-50">
+            <svg viewBox="0 0 220 300" class="w-full h-auto drop-shadow-md">
+                <use href="#botanicalOliveBranch" />
+            </svg>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+                <!-- Giglio verde scuro con fascetta dorata -->
+                <div class="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 text-florence-green flex items-center justify-center">
+                    <svg viewBox="0 0 100 120" class="w-full h-full fill-current drop-shadow-sm">
+                        <path d="M50 8 C48 18 43 28 35 34 C43 38 47 48 47 62 C45 62 43 61 41 60 C38 52 32 46 22 45 C18 45 13 47 10 51 C6 56 6 63 10 68 C16 75 26 77 34 74 C38 72 41 68 44 64 C43 78 40 91 30 102 C37 100 44 98 50 93 C56 98 63 100 70 102 C60 91 57 78 56 64 C59 68 62 72 66 74 C74 77 84 75 90 68 C94 63 94 56 90 51 C87 47 82 45 78 45 C68 46 62 52 59 60 C57 61 55 62 53 62 C53 48 57 38 65 34 C57 28 52 18 50 8 Z" />
+                        <path d="M43 67 L57 67 L55 72 L45 72 Z" fill="#C59B3F" />
+                        <circle cx="50" cy="110" r="4" fill="#C59B3F" />
+                    </svg>
+                </div>
+                <span class="text-[10px] sm:text-xs font-cinzel tracking-[0.25em] sm:tracking-[0.3em] uppercase text-florence-goldDark font-bold block mb-1">
+                    La Nostra Terra
+                </span>
+                <h2 class="font-cinzel text-2xl sm:text-4xl font-bold text-florence-green">
+                    La Tenuta di Marignolle
+                </h2>
+                <div class="gold-divider max-w-xs mx-auto my-3 text-xs">◆</div>
+                <p class="font-cormorant italic text-base sm:text-xl text-florence-greenOlive leading-relaxed px-2">
+                    Sulle storiche colline che abbracciano Firenze, dove la luce della Toscana incontra la terra sassosa e il clima ideale per la coltura dell'olivo.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
+                
+                <div class="paper-bg p-6 sm:p-8 rounded-2xl border border-florence-borderGold/60 shadow-md text-center space-y-3">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto rounded-full bg-florence-green flex items-center justify-center text-florence-gold text-xl sm:text-2xl shadow">
+                        <i class="fa-solid fa-tree"></i>
+                    </div>
+                    <h3 class="font-cinzel text-base sm:text-lg font-bold text-florence-green">L'Oliveta di Collina</h3>
+                    <p class="text-xs text-florence-greenOlive leading-relaxed">
+                        Le nostre piante crescono adagiate sui terrazzamenti di Marignolle, esposte al sole della Toscana. Ogni olivo viene potato e accudito secondo la migliore tradizione agronomica fiorentina.
+                    </p>
+                </div>
+
+                <div class="paper-bg p-6 sm:p-8 rounded-2xl border-2 border-florence-gold shadow-lg text-center space-y-3 relative">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto rounded-full bg-florence-gold flex items-center justify-center text-florence-green text-xl sm:text-2xl shadow">
+                        <i class="fa-solid fa-hand-holding-hand"></i>
+                    </div>
+                    <h3 class="font-cinzel text-base sm:text-lg font-bold text-florence-green">Raccolta a Mano</h3>
+                    <p class="text-xs text-florence-greenOlive leading-relaxed">
+                        Le olive vengono colte direttamente dai rami nell'esatto momento dell'invaiatura, quando il frutto passa dal verde al violaceo e la concentrazione di polifenoli e aromi raggiunge il suo apice.
+                    </p>
+                </div>
+
+                <div class="paper-bg p-6 sm:p-8 rounded-2xl border border-florence-borderGold/60 shadow-md text-center space-y-3">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 mx-auto rounded-full bg-florence-green flex items-center justify-center text-florence-gold text-xl sm:text-2xl shadow">
+                        <i class="fa-solid fa-snowflake"></i>
+                    </div>
+                    <h3 class="font-cinzel text-base sm:text-lg font-bold text-florence-green">Frangitura Immediata</h3>
+                    <p class="text-xs text-florence-greenOlive leading-relaxed">
+                        Entro pochissime ore dal distacco dall'albero, le olive raggiungono il frantoio per essere molite a freddo (&lt; 27°C), preservando intatto il patrimonio di polifenoli ed essenze vegetali.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE STORICA: IL COLLE DI MARIGNOLLE -->
+    <section id="storia-marignolle" class="py-12 sm:py-20 bg-[#F4EDE0] border-y-2 border-florence-gold/40 relative overflow-hidden">
+        <!-- Ramo d'olivo discreto e naturale in basso a destra -->
+        <div class="absolute right-0 bottom-0 z-10 w-20 sm:w-32 md:w-44 pointer-events-none select-none opacity-40 sm:opacity-50">
+            <svg viewBox="0 0 220 300" class="w-full h-auto drop-shadow-md">
+                <use href="#botanicalOliveBranch" />
+            </svg>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+                <span class="text-[10px] sm:text-xs font-cinzel tracking-[0.25em] sm:tracking-[0.3em] uppercase text-florence-goldDark font-bold block mb-1">
+                    Firenze & Le Sue Colline
+                </span>
+                <h2 class="font-cinzel text-2xl sm:text-4xl font-bold text-florence-green">
+                    La Storia del Colle di Marignolle
+                </h2>
+                <div class="gold-divider max-w-xs mx-auto my-3 text-xs">◆</div>
+                <p class="font-cormorant italic text-base sm:text-xl text-florence-greenOlive leading-relaxed px-2">
+                    Un colle nobile e appartato a sud-ovest di Firenze, celebrato nei secoli per la salubrità dell'aria, la magnificenza dei panorami e la generosità della terra.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8 text-xs sm:text-sm text-florence-greenOlive leading-relaxed">
+                <div class="paper-bg p-6 sm:p-8 rounded-2xl border border-florence-borderGold/60 space-y-3 sm:space-y-4 shadow-sm">
+                    <div class="flex items-center gap-3 border-b border-florence-gold/40 pb-3">
+                        <i class="fa-solid fa-landmark text-florence-gold text-xl sm:text-2xl"></i>
+                        <h4 class="font-cinzel text-sm sm:text-base font-bold text-florence-green">Retaggio Mediceo & Umanesimo</h4>
+                    </div>
+                    <p>
+                        Fin dal Trecento e per tutto il Rinascimento, Marignolle fu scelta dalle più influenti famiglie patrizie fiorentine – tra cui i Medici, i Girolami e gli Acciaioli – come rifugio agreste prediletto. Qui, a pochi passi da Bellosguardo e da Porta Romana, la nobiltà fiorentina edificò ville e fattorie modello circondate da ordinati oliveti e vigne.
+                    </p>
+                    <p>
+                        Perfino <strong>Galileo Galilei</strong>, che amava la quiete di queste alture a sud dell'Arno, trovò tra questi colli l'ispirazione per i suoi studi, affascinato dal cielo limpido e dal silenzio che ancora oggi avvolge la nostra Tenuta.
+                    </p>
+                </div>
+
+                <div class="paper-bg p-6 sm:p-8 rounded-2xl border border-florence-borderGold/60 space-y-3 sm:space-y-4 shadow-sm">
+                    <div class="flex items-center gap-3 border-b border-florence-gold/40 pb-3">
+                        <i class="fa-solid fa-mountain-sun text-florence-gold text-xl sm:text-2xl"></i>
+                        <h4 class="font-cinzel text-sm sm:text-base font-bold text-florence-green">Il Terroir di Marignolle</h4>
+                    </div>
+                    <p>
+                        La conformazione geologica delle colline di Marignolle è un dono prezioso per l'olivo: il suolo è dominato da formazioni di <strong>alberese e galestro</strong>, ricche di scheletro calcareo e sali minerali. Questo garantisce un drenaggio naturale perfetto, costringendo le radici secolari a scendere in profondità.
+                    </p>
+                    <p>
+                        L'esposizione solatia e la costante brezza collinare che allontana l'umidità proteggono la drupa in modo naturale, regalando un olio di straordinaria densità, ricchissimo di polifenoli e con una vivace e aristocratica nota fruttata.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FRANTOIO IL MANDORLO DI FIRENZE -->
+    <section id="frantoio" class="py-12 sm:py-20 bg-florence-parchment border-b-2 border-florence-gold/40 relative overflow-hidden">
+        <!-- Ramo d'olivo discreto e naturale in basso a destra -->
+        <div class="absolute right-0 bottom-0 z-10 w-20 sm:w-32 md:w-44 pointer-events-none select-none opacity-40 sm:opacity-50">
+            <svg viewBox="0 0 220 300" class="w-full h-auto drop-shadow-md">
+                <use href="#botanicalOliveBranch" />
+            </svg>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+                <span class="text-[10px] sm:text-xs font-cinzel tracking-[0.25em] sm:tracking-[0.3em] uppercase text-florence-goldDark font-bold block mb-1">
+                    Molitura Tradizionale & Tecnologia
+                </span>
+                <h2 class="font-cinzel text-2xl sm:text-4xl font-bold text-florence-green">
+                    Frantoio "Il Mandorlo" di Firenze
+                </h2>
+                <div class="gold-divider max-w-xs mx-auto my-3 text-xs">◆</div>
+                <p class="font-cormorant italic text-base sm:text-xl text-florence-greenOlive leading-relaxed px-2">
+                    "La maestria di chi dal 1974 trasforma i frutti delle colline fiorentine in puro oro verde, nel connubio perfetto tra tradizione contadina e avanguardia tecnologica."
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+                
+                <div class="lg:col-span-7 space-y-4 sm:space-y-5 text-florence-greenOlive text-xs sm:text-sm leading-relaxed">
+                    <p>
+                        Per dare forma all'Olio Extravergine de <strong>Il Giglio</strong>, Lorenzo Gori affida le olive della Tenuta alle mani esperte del <strong>Frantoio Il Mandorlo</strong>, storico presidio dell'eccellenza olearia situato sulle colline di Firenze. Da tre generazioni di maestri frantoiani, Il Mandorlo è sinonimo di passione viscerale per il territorio e custodia rigorosa della cultivar toscana.
+                    </p>
+                    <p>
+                        La filiera tra la nostra <strong>Tenuta di Marignolle</strong> e il frantoio è questione di pochissime ore: Lorenzo segue in prima persona il trasporto e l'avvio tempestivo alla molitura. Questo annulla qualsiasi fenomeno di ossidazione o fermentazione, consegnando alla bottiglia tutta l'integrità del frutto colto al punto ottimale d'invaiatura.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-2">
+                        <div class="p-3.5 sm:p-4 rounded-xl bg-white/80 border border-florence-borderGold/60 shadow-sm space-y-1">
+                            <div class="flex items-center gap-2 text-florence-green font-cinzel font-bold text-xs">
+                                <i class="fa-solid fa-temperature-arrow-down text-florence-gold"></i>
+                                <span>Ciclo Continuo a Freddo</span>
+                            </div>
+                            <p class="text-[11px] text-florence-greenOlive">
+                                Gramolatura e separazione a temperatura rigidamente controllata sotto i 27°C, al riparo dal contatto con l'aria, per sigillare profumi e fragranza.
+                            </p>
+                        </div>
+                        <div class="p-3.5 sm:p-4 rounded-xl bg-white/80 border border-florence-borderGold/60 shadow-sm space-y-1">
+                            <div class="flex items-center gap-2 text-florence-green font-cinzel font-bold text-xs">
+                                <i class="fa-solid fa-shield-heart text-florence-gold"></i>
+                                <span>Custodia dei Polifenoli</span>
+                            </div>
+                            <p class="text-[11px] text-florence-greenOlive">
+                                Una tecnologia di frangitura millimetrica che tutela i potenti antiossidanti naturali, regalando quel vivace e nobile pizzicore tipico dell'olio fiorentino.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="paper-bg p-6 sm:p-8 rounded-3xl border-2 border-florence-gold shadow-xl text-center space-y-3 sm:space-y-4">
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto rounded-full bg-florence-green text-florence-gold flex items-center justify-center text-xl sm:text-2xl shadow-md">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <span class="text-[10px] uppercase font-bold tracking-[0.25em] text-florence-goldDark block">
+                            Maestri Frantoiani a Firenze
+                        </span>
+                        <h3 class="font-cinzel text-lg sm:text-xl font-bold text-florence-green">
+                            Il Mandorlo
+                        </h3>
+                        <p class="font-cormorant italic text-xs sm:text-sm text-florence-greenOlive">
+                            Polo d'eccellenza e punto di riferimento per l'olivicoltura di qualità sulle colline fiorentine.
+                        </p>
+                        <div class="gold-divider text-xs text-florence-gold max-w-[120px] mx-auto">◆</div>
+                        <p class="text-[11px] sm:text-xs text-florence-greenOlive italic">
+                            Garanzia di filiera corta, tecnologia d'estrazione all'avanguardia e rispetto rigoroso dell'oliva toscana.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- I 4 Punti Qualità del Frantoio a Tutta Larghezza -->
+            <div class="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 w-full">
+                <div class="paper-bg p-4 sm:p-5 rounded-2xl border border-florence-borderGold/70 shadow-sm flex items-center gap-3 sm:gap-3.5 hover:border-florence-gold transition-colors">
+                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-florence-green text-florence-gold flex items-center justify-center flex-shrink-0 text-xs sm:text-sm shadow">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <span class="font-cinzel text-xs font-bold text-florence-green leading-snug">
+                        Molitura tempestiva post-raccolta
+                    </span>
+                </div>
+
+                <div class="paper-bg p-4 sm:p-5 rounded-2xl border border-florence-borderGold/70 shadow-sm flex items-center gap-3 sm:gap-3.5 hover:border-florence-gold transition-colors">
+                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-florence-gold text-florence-green flex items-center justify-center flex-shrink-0 text-xs sm:text-sm shadow">
+                        <i class="fa-solid fa-snowflake"></i>
+                    </div>
+                    <span class="font-cinzel text-xs font-bold text-florence-green leading-snug">
+                        Estrazione meccanica a freddo (&lt; 27°C)
+                    </span>
+                </div>
+
+                <div class="paper-bg p-4 sm:p-5 rounded-2xl border border-florence-borderGold/70 shadow-sm flex items-center gap-3 sm:gap-3.5 hover:border-florence-gold transition-colors">
+                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-florence-green text-florence-gold flex items-center justify-center flex-shrink-0 text-xs sm:text-sm shadow">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <span class="font-cinzel text-xs font-bold text-florence-green leading-snug">
+                        Presenza attiva di Lorenzo Gori in sala macchine
+                    </span>
+                </div>
+
+                <div class="paper-bg p-4 sm:p-5 rounded-2xl border border-florence-borderGold/70 shadow-sm flex items-center gap-3 sm:gap-3.5 hover:border-florence-gold transition-colors">
+                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-florence-gold text-florence-green flex items-center justify-center flex-shrink-0 text-xs sm:text-sm shadow">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <span class="font-cinzel text-xs font-bold text-florence-green leading-snug">
+                        Massima limpidezza e profilo sensoriale intatto
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LE 4 CULTIVAR DELL'OLIVETA -->
+    <section id="oliveta" class="py-12 sm:py-20 bg-florence-green text-white relative overflow-hidden">
+        <div class="absolute -right-24 -bottom-24 w-96 h-96 bg-florence-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Ramo d'olivo discreto e naturale in basso a destra -->
+        <div class="absolute right-0 bottom-0 z-10 w-20 sm:w-32 md:w-44 pointer-events-none select-none opacity-40 sm:opacity-60">
+            <svg viewBox="0 0 220 300" class="w-full h-auto drop-shadow-md">
+                <use href="#botanicalOliveBranch" />
+            </svg>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+                <span class="text-[10px] sm:text-xs font-cinzel tracking-[0.25em] sm:tracking-[0.3em] uppercase text-florence-goldLight font-bold block mb-1">
+                    Varietà Autoctone Toscane
+                </span>
+                <h2 class="font-cinzel text-2xl sm:text-4xl font-bold text-white">
+                    Le 4 Cultivar della Tenuta
+                </h2>
+                <div class="gold-divider max-w-xs mx-auto my-3 text-xs text-florence-gold">◆</div>
+                <blockquote class="font-cormorant italic text-base sm:text-xl text-florence-goldLight px-2">
+                    "L'Oliveta è composta da un 60% di piante di Frantoio, un 20% di Leccino, un 16% di Moraiolo e un 4% di Pendolino, raccolte al giusto grado di maturazione e lavorate con cura."
+                </blockquote>
+                <p class="text-xs text-gray-300 mt-3 max-w-2xl mx-auto px-2">
+                    Questa composizione, selezionata e accudita da Lorenzo Gori fin dal 1986, crea un equilibrio perfetto tra intensità aromatica, struttura polifenolica e morbidezza al palato.
+                </p>
+            </div>
+
+            <!-- Cultivar Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                
+                <!-- Frantoio 60% -->
+                <div class="bg-florence-greenDark/90 border-2 border-florence-gold rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-xl relative group hover:border-florence-goldLight transition-all">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-florence-gold/40 pb-3 mb-3 sm:mb-4">
+                            <span class="font-cinzel text-3xl sm:text-4xl font-black text-florence-gold">60%</span>
+                            <span class="px-2 py-0.5 rounded bg-florence-gold/20 text-florence-goldLight text-[10px] font-bold uppercase tracking-wider">
+                                L'Anima del Blend
+                            </span>
+                        </div>
+                        <h4 class="font-cinzel text-lg sm:text-xl font-bold text-white mb-2">Frantoio</h4>
+                        <p class="text-xs text-gray-300 leading-relaxed mb-3">
+                            La cultivar sovrana della tradizione toscana. Pianta vigorosa a rami allungati, produce drupe ricche di clorofille e sostanze aromatiche.
+                        </p>
+                        <div class="space-y-1.5 text-[11px] text-gray-300 border-t border-white/10 pt-2">
+                            <div><strong class="text-florence-goldLight">Profilo:</strong> Carciofo fresco, erba falciata, mandorla verde.</div>
+                            <div><strong class="text-florence-goldLight">In bocca:</strong> Nota amara marcata e tipico pizzicore vivace.</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 sm:mt-6 pt-3 border-t border-white/10 text-[11px] font-semibold text-florence-goldLight flex items-center gap-1.5">
+                        <i class="fa-solid fa-leaf text-xs"></i> Fruttato verde intenso
+                    </div>
+                </div>
+
+                <!-- Leccino 20% -->
+                <div class="bg-florence-greenDark/90 border border-florence-gold/40 rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-lg relative group hover:border-florence-gold transition-all">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-3 sm:mb-4">
+                            <span class="font-cinzel text-3xl sm:text-4xl font-black text-white/90">20%</span>
+                            <span class="px-2 py-0.5 rounded bg-white/10 text-gray-300 text-[10px] font-bold uppercase tracking-wider">
+                                L'Armonia
+                            </span>
+                        </div>
+                        <h4 class="font-cinzel text-lg sm:text-xl font-bold text-white mb-2">Leccino</h4>
+                        <p class="text-xs text-gray-300 leading-relaxed mb-3">
+                            Tra le più antiche varietà documentate in Toscana. Chioma folta e rami flessuosi, vanta una precoce invaiatura che regala dolcezza e velluto.
+                        </p>
+                        <div class="space-y-1.5 text-[11px] text-gray-300 border-t border-white/10 pt-2">
+                            <div><strong class="text-florence-goldLight">Profilo:</strong> Fruttato leggero, note di lattuga e mandorla dolce.</div>
+                            <div><strong class="text-florence-goldLight">Funzione:</strong> Rende il blend rotondo, gentile ed equilibrato.</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 sm:mt-6 pt-3 border-t border-white/10 text-[11px] font-semibold text-florence-goldLight flex items-center gap-1.5">
+                        <i class="fa-solid fa-leaf text-xs"></i> Morbido ed elegante
+                    </div>
+                </div>
+
+                <!-- Moraiolo 16% -->
+                <div class="bg-florence-greenDark/90 border border-florence-gold/40 rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-lg relative group hover:border-florence-gold transition-all">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-3 sm:mb-4">
+                            <span class="font-cinzel text-3xl sm:text-4xl font-black text-white/90">16%</span>
+                            <span class="px-2 py-0.5 rounded bg-white/10 text-gray-300 text-[10px] font-bold uppercase tracking-wider">
+                                Forza & Longevità
+                            </span>
+                        </div>
+                        <h4 class="font-cinzel text-lg sm:text-xl font-bold text-white mb-2">Moraiolo</h4>
+                        <p class="text-xs text-gray-300 leading-relaxed mb-3">
+                            Cultivar rustica e tenace, adora i costoni sassosi di Marignolle. Drupa piccola e sferica, è un autentico scrigno di polifenoli antiossidanti naturali.
+                        </p>
+                        <div class="space-y-1.5 text-[11px] text-gray-300 border-t border-white/10 pt-2">
+                            <div><strong class="text-florence-goldLight">Profilo:</strong> Erbe officinali, cardo di campo, sentori balsamici.</div>
+                            <div><strong class="text-florence-goldLight">Valore:</strong> Dona struttura, corpo e straordinaria stabilità nel tempo.</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 sm:mt-6 pt-3 border-t border-white/10 text-[11px] font-semibold text-florence-goldLight flex items-center gap-1.5">
+                        <i class="fa-solid fa-leaf text-xs"></i> Amaro fine e polifenolico
+                    </div>
+                </div>
+
+                <!-- Pendolino 4% -->
+                <div class="bg-florence-greenDark/90 border border-florence-gold/40 rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-lg relative group hover:border-florence-gold transition-all">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-3 sm:mb-4">
+                            <span class="font-cinzel text-3xl sm:text-4xl font-black text-white/90">4%</span>
+                            <span class="px-2 py-0.5 rounded bg-white/10 text-gray-300 text-[10px] font-bold uppercase tracking-wider">
+                                Il Fecondatore
+                            </span>
+                        </div>
+                        <h4 class="font-cinzel text-lg sm:text-xl font-bold text-white mb-2">Pendolino</h4>
+                        <p class="text-xs text-gray-300 leading-relaxed mb-3">
+                            Riconoscibile per la caratteristica chioma pendula ("a piangente"). È il custode indispensabile della fioritura di primavera e dell'impollinazione dell'intera tenuta.
+                        </p>
+                        <div class="space-y-1.5 text-[11px] text-gray-300 border-t border-white/10 pt-2">
+                            <div><strong class="text-florence-goldLight">Profilo:</strong> Mandorlato fresco, sfumature floreali sottili.</div>
+                            <div><strong class="text-florence-goldLight">Ruolo:</strong> Armonizza il retrogusto con grazia aristocratica.</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 sm:mt-6 pt-3 border-t border-white/10 text-[11px] font-semibold text-florence-goldLight flex items-center gap-1.5">
+                        <i class="fa-solid fa-leaf text-xs"></i> Bouquet floreale
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION QUALITÀ & VALORI NUTRIZIONALI -->
+    <section id="qualita-valori" class="py-12 sm:py-20 bg-florence-parchmentDark relative overflow-hidden">
+        <!-- Ramo d'olivo discreto e naturale in basso a destra -->
+        <div class="absolute right-0 bottom-0 z-10 w-20 sm:w-32 md:w-44 pointer-events-none select-none opacity-40 sm:opacity-50">
+            <svg viewBox="0 0 220 300" class="w-full h-auto drop-shadow-md">
+                <use href="#botanicalOliveBranch" />
+            </svg>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+                <span class="text-[10px] sm:text-xs font-cinzel tracking-[0.25em] sm:tracking-[0.3em] uppercase text-florence-goldDark font-bold block mb-1">
+                    Trasparenza & Purezza
+                </span>
+                <h2 class="font-cinzel text-2xl sm:text-4xl font-bold text-florence-green">
+                    Disciplinare & Dichiarazione Nutrizionale
+                </h2>
+                <div class="gold-divider max-w-xs mx-auto my-3 text-xs">◆</div>
+                <p class="font-cormorant italic text-base sm:text-xl text-florence-greenOlive leading-relaxed px-2">
+                    Tutti i dati analitici del nostro Olio Extravergine di Oliva, lavorato all'origine nel pieno rispetto dei ritmi della natura toscana.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-start">
+                
+                <!-- METODO E CATEGORIA -->
+                <div class="paper-bg p-5 sm:p-8 rounded-2xl sm:rounded-3xl border-2 border-florence-green shadow-xl space-y-4 sm:space-y-6">
+                    <div class="flex items-center justify-between border-b border-florence-gold/40 pb-3">
+                        <div class="flex items-center gap-2.5 sm:gap-3">
+                            <span class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-florence-green text-florence-gold flex items-center justify-center font-cinzel font-bold text-xs">
+                                01
+                            </span>
+                            <span class="font-cinzel text-xs sm:text-base font-bold text-florence-green">
+                                Standard di Raccolta & Frangitura
+                            </span>
+                        </div>
+                        <span class="text-[9px] sm:text-[10px] font-mono font-bold px-2.5 sm:px-3 py-1 bg-florence-gold/20 text-florence-green rounded-full">
+                            100% ITALIANO
+                        </span>
+                    </div>
+
+                    <div class="space-y-3 sm:space-y-4 text-xs">
+                        <div class="p-3.5 sm:p-4 rounded-xl bg-white/70 border border-florence-borderGold/60">
+                            <span class="font-bold text-[9px] sm:text-[10px] uppercase tracking-wider text-florence-goldDark block mb-1">
+                                Denominazione Merceologica
+                            </span>
+                            <p class="font-cinzel text-xs sm:text-sm font-bold text-florence-green">
+                                OLIO EXTRAVERGINE DI OLIVA
+                            </p>
+                            <p class="font-cormorant italic text-xs text-florence-greenOlive mt-1">
+                                "Olio d'oliva di categoria superiore ottenuto direttamente dalle olive e unicamente mediante procedimenti meccanici."
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div class="p-3 sm:p-3.5 rounded-xl bg-white/70 border border-florence-borderGold/60">
+                                <span class="text-[9px] sm:text-[10px] uppercase font-bold text-florence-goldDark block">Origine Terroir</span>
+                                <span class="font-cinzel text-xs sm:text-sm font-bold text-florence-green block mt-0.5">100% Italiano</span>
+                                <span class="text-[11px] text-florence-greenOlive">Colline di Firenze (FI)</span>
+                            </div>
+                            <div class="p-3 sm:p-3.5 rounded-xl bg-white/70 border border-florence-borderGold/60">
+                                <span class="text-[9px] sm:text-[10px] uppercase font-bold text-florence-goldDark block">Metodo di Frangitura</span>
+                                <span class="font-cinzel text-xs sm:text-sm font-bold text-florence-green block mt-0.5">Spremitura a Freddo</span>
+                                <span class="text-[11px] text-florence-greenOlive">Temperatura controllata &lt; 27°C</span>
+                            </div>
+                        </div>
+
+                        <div class="p-3.5 sm:p-4 rounded-xl bg-white/70 border border-florence-borderGold/60 space-y-1">
+                            <span class="text-[9px] sm:text-[10px] uppercase font-bold text-florence-goldDark block">Conservazione Naturale</span>
+                            <p class="text-[11px] sm:text-xs text-florence-greenOlive leading-relaxed">
+                                Conservare al riparo dalla luce e da fonti dirette di calore per preservare inalterati i polifenoli, la fragranza e gli aromi dell'oliva appena franta. Richiudere sempre accuratamente dopo l'uso.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NUTRITION TABLE & PRODUTTORE -->
+                <div class="paper-bg p-5 sm:p-8 rounded-2xl sm:rounded-3xl border-2 border-florence-gold shadow-xl space-y-4 sm:space-y-6">
+                    <div class="flex items-center justify-between border-b border-florence-gold/40 pb-3">
+                        <div class="flex items-center gap-2.5 sm:gap-3">
+                            <span class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-florence-gold text-florence-green font-cinzel font-bold text-xs flex items-center justify-center">
+                                02
+                            </span>
+                            <span class="font-cinzel text-xs sm:text-base font-bold text-florence-green">
+                                Dichiarazione Nutrizionale
+                            </span>
+                        </div>
+                        <span class="text-[9px] sm:text-[10px] font-mono font-bold px-2.5 sm:px-3 py-1 bg-florence-green text-florence-goldLight rounded-full">
+                            Reg. UE 1169/2011
+                        </span>
+                    </div>
+
+                    <div class="p-3 sm:p-3.5 rounded-xl bg-white/70 border border-florence-borderGold/60 text-xs">
+                        <span class="text-[9px] sm:text-[10px] uppercase font-bold text-florence-goldDark block">
+                            Prodotto e confezionato all'origine da:
+                        </span>
+                        <strong class="font-cinzel text-xs sm:text-sm text-florence-green block mt-0.5">
+                            Azienda Agricola Il Giglio di Lorenzo Gori
+                        </strong>
+                        <span class="text-[11px] sm:text-xs text-florence-greenOlive">Tenuta di Marignolle, Firenze (FI) – Italia</span>
+                    </div>
+
+                    <div class="p-3 sm:p-4 rounded-xl bg-white border border-florence-borderGold text-xs">
+                        <div class="font-cinzel font-bold text-florence-green text-xs uppercase tracking-wider text-center border-b border-florence-borderGold/40 pb-2 mb-2">
+                            Valori medi per 100 ml di prodotto
+                        </div>
+                        <div class="divide-y divide-gray-100 font-medium text-[11px] sm:text-xs">
+                            <div class="flex justify-between py-1.5 font-bold text-florence-green">
+                                <span>Energia</span>
+                                <span class="font-cinzel">3389 kJ / 824 kcal</span>
+                            </div>
+                            <div class="flex justify-between py-1.5 font-bold text-florence-green">
+                                <span>Grassi totali</span>
+                                <span class="font-cinzel">91,6 g</span>
+                            </div>
+                            <div class="flex justify-between py-1 text-florence-greenOlive pl-3 text-[10px] sm:text-[11px]">
+                                <span>- di cui acidi grassi saturi</span>
+                                <span class="font-semibold text-florence-green">13,8 g</span>
+                            </div>
+                            <div class="flex justify-between py-1 text-florence-greenOlive">
+                                <span>Carboidrati / di cui zuccheri</span>
+                                <span class="font-semibold text-florence-green">0 g / 0 g</span>
+                            </div>
+                            <div class="flex justify-between py-1 text-florence-greenOlive">
+                                <span>Proteine</span>
+                                <span class="font-semibold text-florence-green">0 g</span>
+                            </div>
+                            <div class="flex justify-between py-1 text-florence-greenOlive">
+                                <span>Sale</span>
+                                <span class="font-semibold text-florence-green">0 g</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-3 sm:p-3.5 rounded-xl bg-white/70 border border-florence-borderGold/60 flex flex-col sm:flex-row sm:items-center justify-between text-xs gap-2">
+                        <div>
+                            <span class="text-[9px] sm:text-[10px] uppercase font-bold text-florence-goldDark block">Terroir & Purezza</span>
+                            <span class="text-[11px] text-florence-green font-semibold">Raccolto a mano nelle Colline di Firenze</span>
+                        </div>
+                        <div class="sm:text-right">
+                            <span class="text-[9px] sm:text-[10px] uppercase font-bold text-florence-goldDark block">Molitura Artigianale</span>
+                            <span class="font-cinzel text-xs font-bold text-florence-green">Frantoio Il Mandorlo (Firenze)</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION ACETO -->
+    <section id="aceto" class="py-12 sm:py-20 bg-florence-greenDark text-white relative overflow-hidden">
+        <!-- Ramo d'olivo discreto e naturale in basso a destra -->
+        <div class="absolute right-0 bottom-0 z-10 w-20 sm:w-32 md:w-44 pointer-events-none select-none opacity-40 sm:opacity-60">
+            <svg viewBox="0 0 220 300" class="w-full h-auto drop-shadow-md">
+                <use href="#botanicalOliveBranch" />
+            </svg>
+        </div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
+            <div class="space-y-4 sm:space-y-6">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 mx-auto text-florence-gold">
+                    <svg viewBox="0 0 100 120" class="w-full h-full fill-current drop-shadow">
+                        <path d="M50 8 C48 18 43 28 35 34 C43 38 47 48 47 62 C45 62 43 61 41 60 C38 52 32 46 22 45 C18 45 13 47 10 51 C6 56 6 63 10 68 C16 75 26 77 34 74 C38 72 41 68 44 64 C43 78 40 91 30 102 C37 100 44 98 50 93 C56 98 63 100 70 102 C60 91 57 78 56 64 C59 68 62 72 66 74 C74 77 84 75 90 68 C94 63 94 56 90 51 C87 47 82 45 78 45 C68 46 62 52 59 60 C57 61 55 62 53 62 C53 48 57 38 65 34 C57 28 52 18 50 8 Z" />
+                        <circle cx="50" cy="110" r="3.5" fill="#C59B3F" />
+                    </svg>
+                </div>
+
+                <span class="text-[10px] sm:text-xs font-cinzel tracking-[0.25em] sm:tracking-[0.3em] uppercase text-florence-goldLight font-bold block">
+                    Selezione Artigianale di Tenuta
+                </span>
+
+                <h2 class="font-cinzel text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight text-white">
+                    L'Aceto di Tenuta
+                </h2>
+
+                <div class="gold-divider max-w-xs mx-auto my-2 text-xs text-florence-gold">◆</div>
+
+                <p class="font-cormorant italic text-lg sm:text-2xl lg:text-3xl text-florence-goldLight leading-relaxed max-w-4xl mx-auto px-2">
+                    "Fatto con uve Merlot e Cabernet. Prodotto e confezionato a regola d'arte da Lorenzo Gori nella Tenuta di Marignolle (FI)."
+                </p>
+
+                <p class="text-xs sm:text-base text-gray-300 leading-relaxed font-body max-w-3xl mx-auto px-2">
+                    Accanto ai nostri olivi secolari, i vigneti di Merlot e Cabernet della Tenuta beneficiano del medesimo terreno ricco di galestro e della perfetta insolazione. Da una fermentazione spontanea e da un lento invecchiamento curato personalmente da Lorenzo Gori nasce un aceto nobile, vivo e straordinariamente profumato, ideale per elevare le preparazioni gastronomiche toscane.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 pt-4 sm:pt-6 max-w-4xl mx-auto">
+                    <div class="bg-white/5 border border-florence-gold/40 rounded-2xl p-4 sm:p-6 text-center hover:border-florence-gold transition-colors">
+                        <span class="text-[9px] sm:text-[10px] uppercase tracking-widest text-florence-gold font-bold block mb-1">Uve Selezionate</span>
+                        <span class="font-cinzel text-base sm:text-lg font-bold text-white block">Merlot & Cabernet</span>
+                        <span class="text-xs text-gray-300 block mt-1">Vigneti di Marignolle</span>
+                    </div>
+                    <div class="bg-white/5 border border-florence-gold/40 rounded-2xl p-4 sm:p-6 text-center hover:border-florence-gold transition-colors">
+                        <span class="text-[9px] sm:text-[10px] uppercase tracking-widest text-florence-gold font-bold block mb-1">Lavorazione</span>
+                        <span class="font-cinzel text-base sm:text-lg font-bold text-white block">A Regola d'Arte</span>
+                        <span class="text-xs text-gray-300 block mt-1">Cura di Lorenzo Gori</span>
+                    </div>
+                    <div class="bg-white/5 border border-florence-gold/40 rounded-2xl p-4 sm:p-6 text-center hover:border-florence-gold transition-colors">
+                        <span class="text-[9px] sm:text-[10px] uppercase tracking-widest text-florence-gold font-bold block mb-1">Affinamento</span>
+                        <span class="font-cinzel text-base sm:text-lg font-bold text-white block">Lenta Maturazione</span>
+                        <span class="text-xs text-gray-300 block mt-1">Tradizione Contadina</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION ABBINAMENTI -->
+    <section id="abbinamenti" class="py-12 sm:py-20 bg-florence-parchment relative overflow-hidden">
+        <!-- Ramo d'olivo discreto e naturale in basso a destra -->
+        <div class="absolute right-0 bottom-0 z-10 w-20 sm:w-32 md:w-44 pointer-events-none select-none opacity-40 sm:opacity-50">
+            <svg viewBox="0 0 220 300" class="w-full h-auto drop-shadow-md">
+                <use href="#botanicalOliveBranch" />
+            </svg>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+                <span class="text-[10px] sm:text-xs font-cinzel tracking-[0.25em] sm:tracking-[0.3em] uppercase text-florence-goldDark font-bold block mb-1">
+                    Cultura Enogastronomica
+                </span>
+                <h2 class="font-cinzel text-2xl sm:text-4xl font-bold text-florence-green">
+                    Gli Abbinamenti in Tavola
+                </h2>
+                <div class="gold-divider max-w-xs mx-auto my-3 text-xs">◆</div>
+                <p class="font-cormorant italic text-base sm:text-xl text-florence-greenOlive leading-relaxed px-2">
+                    L'olio e l'aceto di Marignolle nascono per essere celebrati sulla tavola toscana e con la grande cucina italiana.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
+                
+                <div class="paper-bg p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-florence-borderGold/60 shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-florence-green text-florence-gold flex items-center justify-center text-lg sm:text-xl mb-3 sm:mb-4">
+                            <i class="fa-solid fa-bread-slice"></i>
+                        </div>
+                        <h3 class="font-cinzel text-base sm:text-lg font-bold text-florence-green mb-2">A Crudo sul Pane Toscano</h3>
+                        <p class="text-xs text-florence-greenOlive leading-relaxed">
+                            L'esaltazione pura della nostra spremitura a freddo: pane sciocco leggermente abbrustolito, un cristallo di sale e l'Olio Il Giglio appena versato, per liberare l'aroma verde di carciofo e mandorla.
+                        </p>
+                    </div>
+                    <div class="mt-4 sm:mt-6 pt-3 border-t border-florence-borderGold/40 text-[11px] font-bold text-florence-goldDark">
+                        Ideale con: Pane toscano, pinzimonio fresco
+                    </div>
+                </div>
+
+                <div class="paper-bg p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-florence-borderGold/60 shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-florence-green text-florence-gold flex items-center justify-center text-lg sm:text-xl mb-3 sm:mb-4">
+                            <i class="fa-solid fa-fire-burner"></i>
+                        </div>
+                        <h3 class="font-cinzel text-base sm:text-lg font-bold text-florence-green mb-2">Bistecca alla Fiorentina</h3>
+                        <p class="text-xs text-florence-greenOlive leading-relaxed">
+                            La carne chianina appena tolta dai carboni ardenti esige un filo d'olio con corpo, vivacità e una persistenza piccante. La presenza preponderante del Frantoio e Moraiolo regala una perfetta armonia balsamica.
+                        </p>
+                    </div>
+                    <div class="mt-4 sm:mt-6 pt-3 border-t border-florence-borderGold/40 text-[11px] font-bold text-florence-goldDark">
+                        Ideale con: Carni alla brace, ribollita, zuppe di legumi
+                    </div>
+                </div>
+
+                <div class="paper-bg p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-florence-borderGold/60 shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-florence-wine text-white flex items-center justify-center text-lg sm:text-xl mb-3 sm:mb-4">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+                        <h3 class="font-cinzel text-base sm:text-lg font-bold text-florence-green mb-2">Vinaigrette d'Autore</h3>
+                        <p class="text-xs text-florence-greenOlive leading-relaxed">
+                            Unione naturale tra l'Olio EVO e l'Aceto di Merlot & Cabernet Il Giglio: emulsionati insieme con tre parti d'olio e una di aceto, donano fragranza e nobiltà a misticanze campestri e formaggi freschi.
+                        </p>
+                    </div>
+                    <div class="mt-4 sm:mt-6 pt-3 border-t border-florence-borderGold/40 text-[11px] font-bold text-florence-wine">
+                        Ideale con: Insalate nobili, carni bianche, marinature
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION CONTATTI (Perfettamente ottimizzata per smartphone con bottoni touch grandi) -->
+    <section id="contatti" class="py-12 sm:py-20 bg-florence-parchmentDark border-t-2 border-florence-gold/40 relative overflow-hidden">
+        <!-- Ramo d'olivo discreto e naturale in basso a destra -->
+        <div class="absolute right-0 bottom-0 z-10 w-20 sm:w-32 md:w-44 pointer-events-none select-none opacity-40 sm:opacity-50">
+            <svg viewBox="0 0 220 300" class="w-full h-auto drop-shadow-md">
+                <use href="#botanicalOliveBranch" />
+            </svg>
+        </div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 text-florence-green flex items-center justify-center">
+                    <svg viewBox="0 0 100 120" class="w-full h-full fill-current drop-shadow-sm">
+                        <path d="M50 8 C48 18 43 28 35 34 C43 38 47 48 47 62 C45 62 43 61 41 60 C38 52 32 46 22 45 C18 45 13 47 10 51 C6 56 6 63 10 68 C16 75 26 77 34 74 C38 72 41 68 44 64 C43 78 40 91 30 102 C37 100 44 98 50 93 C56 98 63 100 70 102 C60 91 57 78 56 64 C59 68 62 72 66 74 C74 77 84 75 90 68 C94 63 94 56 90 51 C87 47 82 45 78 45 C68 46 62 52 59 60 C57 61 55 62 53 62 C53 48 57 38 65 34 C57 28 52 18 50 8 Z" />
+                        <circle cx="50" cy="110" r="3.5" fill="#C59B3F" />
+                    </svg>
+                </div>
+                <span class="text-[10px] sm:text-xs font-cinzel tracking-[0.25em] sm:tracking-[0.3em] uppercase text-florence-goldDark font-bold block mb-1">
+                    Relazione Diretta con il Produttore
+                </span>
+                <h2 class="font-cinzel text-2xl sm:text-4xl font-bold text-florence-green">
+                    Contatti & Tenuta
+                </h2>
+                <div class="gold-divider max-w-xs mx-auto my-3 text-xs">◆</div>
+                <p class="font-cormorant italic text-base sm:text-xl text-florence-greenOlive leading-relaxed px-2">
+                    Per informazioni sulle annate di produzione, prenotazione bottiglie di Olio Extravergine e Aceto di Tenuta, o per fissare un incontro a Marignolle.
+                </p>
+            </div>
+
+            <!-- Main Contact Card -->
+            <div class="paper-bg p-5 sm:p-8 lg:p-12 rounded-2xl sm:rounded-3xl border-2 border-florence-gold shadow-2xl relative overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-center">
+                    
+                    <div class="md:col-span-5 text-center md:text-left space-y-3 sm:space-y-4 border-b md:border-b-0 md:border-r border-florence-borderGold/60 pb-6 md:pb-0 md:pr-6">
+                        <span class="text-[10px] uppercase font-bold tracking-[0.25em] text-florence-goldDark block">
+                            Azienda Agricola Il Giglio
+                        </span>
+                        <h3 class="font-cinzel text-xl sm:text-3xl font-extrabold text-florence-green">
+                            Lorenzo Gori
+                        </h3>
+                        <p class="font-cormorant italic text-sm sm:text-base text-florence-greenOlive">
+                            Produttore e custode dell'Oliveta di Marignolle sulle colline fiorentine.
+                        </p>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-florence-green/10 text-florence-green font-cinzel text-xs font-bold">
+                            <i class="fa-solid fa-location-dot text-florence-goldDark"></i>
+                            <span>Tenuta di Marignolle • Firenze</span>
+                        </div>
+                    </div>
+
+                    <!-- Direct Action Cards (Tocco facilitato su smartphone con feedback attivo) -->
+                    <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                        
+                        <!-- Telefono / WhatsApp (Tocca per chiamare o scrivere) -->
+                        <a href="tel:+393931413932" class="p-4 sm:p-5 rounded-2xl bg-white/90 border border-florence-borderGold/70 shadow-sm hover:border-florence-gold active:scale-95 transition-all group flex flex-col justify-between">
+                            <div class="space-y-2">
+                                <div class="w-10 h-10 rounded-full bg-florence-green text-florence-gold flex items-center justify-center text-base group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <span class="text-[10px] uppercase font-bold tracking-wider text-florence-goldDark block">Cellulare & WhatsApp</span>
+                                <span class="font-cinzel text-sm sm:text-base font-extrabold text-florence-green block tracking-wide whitespace-nowrap">
+                                    +39 393 141 3932
+                                </span>
+                            </div>
+                            <span class="text-[11px] font-bold text-florence-goldDark group-hover:text-florence-green flex items-center gap-1.5 mt-3 pt-2 border-t border-gray-100">
+                                Chiama ora <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </span>
+                        </a>
+
+                        <!-- Email (Tocca per inviare messaggio) -->
+                        <a href="mailto:lorenzogori.ilgiglio@gmail.com" class="p-4 sm:p-5 rounded-2xl bg-white/90 border border-florence-borderGold/70 shadow-sm hover:border-florence-gold active:scale-95 transition-all group flex flex-col justify-between overflow-hidden">
+                            <div class="space-y-2">
+                                <div class="w-10 h-10 rounded-full bg-florence-gold text-florence-green flex items-center justify-center text-base group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <span class="text-[10px] uppercase font-bold tracking-wider text-florence-goldDark block">Posta Elettronica</span>
+                                <span class="font-body text-[11px] sm:text-xs lg:text-[13px] font-bold text-florence-green block whitespace-nowrap">
+                                    lorenzogori.ilgiglio@gmail.com
+                                </span>
+                            </div>
+                            <span class="text-[11px] font-bold text-florence-goldDark group-hover:text-florence-green flex items-center gap-1.5 mt-3 pt-2 border-t border-gray-100">
+                                Invia messaggio <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </span>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SIGILLO DI TENUTA -->
+    <section class="py-12 sm:py-16 bg-florence-parchmentDark border-t border-florence-gold/40">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-3 sm:space-y-4">
+            <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto text-florence-gold">
+                <svg viewBox="0 0 100 120" class="w-full h-full fill-current drop-shadow">
+                    <path d="M50 8 C48 18 43 28 35 34 C43 38 47 48 47 62 C45 62 43 61 41 60 C38 52 32 46 22 45 C18 45 13 47 10 51 C6 56 6 63 10 68 C16 75 26 77 34 74 C38 72 41 68 44 64 C43 78 40 91 30 102 C37 100 44 98 50 93 C56 98 63 100 70 102 C60 91 57 78 56 64 C59 68 62 72 66 74 C74 77 84 75 90 68 C94 63 94 56 90 51 C87 47 82 45 78 45 C68 46 62 52 59 60 C57 61 55 62 53 62 C53 48 57 38 65 34 C57 28 52 18 50 8 Z" />
+                    <circle cx="50" cy="110" r="3.5" fill="#C59B3F" />
+                </svg>
+            </div>
+            <h3 class="font-cinzel text-xl sm:text-2xl font-bold text-florence-green">Azienda Agricola Il Giglio</h3>
+            <p class="font-cormorant italic text-base sm:text-lg text-florence-greenOlive max-w-xl mx-auto px-2">
+                "Dal 1986, l'amore per l'olivo e la presenza costante in ogni fase della lavorazione danno vita a un olio che custodisce l'anima più autentica delle colline di Firenze."
+            </p>
+            <div class="text-[10px] sm:text-xs uppercase font-cinzel tracking-widest text-florence-goldDark font-bold">
+                Lorenzo Gori • Tenuta di Marignolle, Firenze
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-florence-greenDark text-gray-400 py-10 sm:py-14 border-t-4 border-florence-gold text-xs">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-10">
+                
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 text-florence-gold">
+                            <svg viewBox="0 0 100 120" class="w-full h-full fill-current">
+                                <path d="M50 8 C48 18 43 28 35 34 C43 38 47 48 47 62 C45 62 43 61 41 60 C38 52 32 46 22 45 C18 45 13 47 10 51 C6 56 6 63 10 68 C16 75 26 77 34 74 C38 72 41 68 44 64 C43 78 40 91 30 102 C37 100 44 98 50 93 C56 98 63 100 70 102 C60 91 57 78 56 64 C59 68 62 72 66 74 C74 77 84 75 90 68 C94 63 94 56 90 51 C87 47 82 45 78 45 C68 46 62 52 59 60 C57 61 55 62 53 62 C53 48 57 38 65 34 C57 28 52 18 50 8 Z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="font-cinzel text-white text-sm sm:text-base font-bold tracking-wider block">IL GIGLIO</span>
+                            <span class="text-[9px] uppercase tracking-widest text-florence-gold block">FIRENZE • DAL 1986</span>
+                        </div>
+                    </div>
+                    <p class="text-[11px] text-gray-300 leading-relaxed font-body">
+                        Azienda Agricola Il Giglio di Lorenzo Gori. Olio extravergine di oliva d'eccellenza prodotto dal 1986 con partecipazione diretta dalla raccolta all'imbottigliamento nella Tenuta di Marignolle.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="font-cinzel text-white font-bold uppercase tracking-wider text-xs mb-2 sm:mb-3">
+                        Lavorazione Artigianale
+                    </h5>
+                    <ul class="space-y-1.5 text-[11px] text-gray-300">
+                        <li>• Olio d'eccellenza prodotto dal 1986</li>
+                        <li>• Raccolta a mano all'invaiatura</li>
+                        <li>• Frangitura immediata a freddo (&lt; 27°C)</li>
+                        <li>• Presenza diretta di Lorenzo Gori in ogni fase</li>
+                        <li>• Confezionamento all'origine a Marignolle</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-cinzel text-white font-bold uppercase tracking-wider text-xs mb-2 sm:mb-3">
+                        Tenuta
+                    </h5>
+                    <p class="text-[11px] text-gray-300 leading-relaxed space-y-1">
+                        <span class="block font-bold text-white">Azienda Agricola Il Giglio</span>
+                        <span class="block">Tenuta di Marignolle, Firenze (FI) – Italia</span>
+                        <span class="block text-florence-goldLight">Lorenzo Gori</span>
+                        <span class="block pt-1">
+                            <a href="tel:+393931413932" class="hover:text-florence-gold active:text-florence-gold transition-colors whitespace-nowrap"><i class="fa-solid fa-phone text-florence-gold mr-1"></i> +39 393 141 3932</a>
+                        </span>
+                        <span class="block">
+                            <a href="mailto:lorenzogori.ilgiglio@gmail.com" class="hover:text-florence-gold active:text-florence-gold transition-colors whitespace-nowrap"><i class="fa-solid fa-envelope text-florence-gold mr-1"></i> lorenzogori.ilgiglio@gmail.com</a>
+                        </span>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/10 pt-5 sm:pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-gray-400 gap-3 text-center sm:text-left">
+                <div>
+                    © Azienda Agricola Il Giglio di Lorenzo Gori • Tenuta di Marignolle, Firenze.
+                </div>
+                <div class="flex space-x-3 text-florence-gold justify-center">
+                    <span>Olio d'Eccellenza dal 1986</span>
+                    <span>•</span>
+                    <span>100% Italiano</span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Script Menu Mobile con chiusura automatica al tap -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
+        }
+    </script>
+</body>
+</html>
